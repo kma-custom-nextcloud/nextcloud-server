@@ -1,0 +1,6 @@
+#!/bin/bash
+
+find /var/www/html/core -name \* -print > /tmp/files-list
+sed -i 's,/var/www/html/core,,g' /tmp/files-list
+
+rsync --files-from=/tmp/files-list -r /usr/src/nextcloud/core /var/www/html/core
