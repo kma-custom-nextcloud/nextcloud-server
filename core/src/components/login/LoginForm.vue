@@ -64,6 +64,7 @@
 					:placeholder="t('core', 'Username or email')"
 					:aria-label="t('core', 'Username or email')"
 					required
+					:readonly="!skipVerifyToken"
 					@change="updateUsername">
 				<label for="user" class="infield">{{ t('core', 'Username or email') }}</label>
 			</p>
@@ -165,6 +166,10 @@ export default {
 			type: Boolean,
 			default: false,
 		},
+		skipVerifyToken: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	data() {
 		return {
@@ -218,6 +223,10 @@ export default {
 			this.$emit('update:username', this.user)
 		},
 		submit() {
+			if (!this.skipVerifyToken) {
+				this.user = this.username
+			}
+
 			this.loading = true
 			this.$emit('submit')
 		},

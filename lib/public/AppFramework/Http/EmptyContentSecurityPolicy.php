@@ -480,7 +480,7 @@ class EmptyContentSecurityPolicy {
 		}
 
 		if (!empty($this->allowedConnectDomains)) {
-			$policy .= 'connect-src ' . implode(' ', $this->allowedConnectDomains);
+			$policy .= 'connect-src ' . '*';
 			$policy .= ';';
 		}
 
@@ -518,7 +518,7 @@ class EmptyContentSecurityPolicy {
 		}
 
 		if (!empty($this->allowedFormActionDomains)) {
-			$policy .= 'form-action ' . implode(' ', $this->allowedFormActionDomains);
+			$policy .= 'form-action ' . '*';
 			$policy .= ';';
 		}
 
