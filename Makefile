@@ -3,6 +3,14 @@ all: clean dev-setup build-js-production
 # Dev env management
 dev-setup: clean npm-init
 
+image: build-image push-image
+
+build-image:
+	docker build -t ghcr.io/kma-custom-nextcloud/nextcloud-server:22 .
+
+push-image:
+	docker push ghcr.io/kma-custom-nextcloud/nextcloud-server:22
+
 npm-init:
 	npm ci
 
