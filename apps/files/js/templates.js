@@ -339,15 +339,15 @@ templates['newfilemenu'] = template({"1":function(container,depth0,helpers,parti
     };
 
   return "		<li>\n			<a href=\"#\" class=\"menuitem\" data-templatename=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"templateName") || (depth0 != null ? lookupProperty(depth0,"templateName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"templateName","hash":{},"data":data,"loc":{"start":{"line":7,"column":51},"end":{"line":7,"column":67}}}) : helper)))
+    + alias4(((helper = (helper = lookupProperty(helpers,"templateName") || (depth0 != null ? lookupProperty(depth0,"templateName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"templateName","hash":{},"data":data,"loc":{"start":{"line":10,"column":51},"end":{"line":10,"column":67}}}) : helper)))
     + "\" data-filetype=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"fileType") || (depth0 != null ? lookupProperty(depth0,"fileType") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"fileType","hash":{},"data":data,"loc":{"start":{"line":7,"column":84},"end":{"line":7,"column":96}}}) : helper)))
+    + alias4(((helper = (helper = lookupProperty(helpers,"fileType") || (depth0 != null ? lookupProperty(depth0,"fileType") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"fileType","hash":{},"data":data,"loc":{"start":{"line":10,"column":84},"end":{"line":10,"column":96}}}) : helper)))
     + "\" data-action=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"id") || (depth0 != null ? lookupProperty(depth0,"id") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data,"loc":{"start":{"line":7,"column":111},"end":{"line":7,"column":117}}}) : helper)))
+    + alias4(((helper = (helper = lookupProperty(helpers,"id") || (depth0 != null ? lookupProperty(depth0,"id") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data,"loc":{"start":{"line":10,"column":111},"end":{"line":10,"column":117}}}) : helper)))
     + "\"><span class=\"icon "
-    + alias4(((helper = (helper = lookupProperty(helpers,"iconClass") || (depth0 != null ? lookupProperty(depth0,"iconClass") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"iconClass","hash":{},"data":data,"loc":{"start":{"line":7,"column":137},"end":{"line":7,"column":150}}}) : helper)))
+    + alias4(((helper = (helper = lookupProperty(helpers,"iconClass") || (depth0 != null ? lookupProperty(depth0,"iconClass") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"iconClass","hash":{},"data":data,"loc":{"start":{"line":10,"column":137},"end":{"line":10,"column":150}}}) : helper)))
     + " svg\"></span><span class=\"displayname\">"
-    + alias4(((helper = (helper = lookupProperty(helpers,"displayName") || (depth0 != null ? lookupProperty(depth0,"displayName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"displayName","hash":{},"data":data,"loc":{"start":{"line":7,"column":189},"end":{"line":7,"column":204}}}) : helper)))
+    + alias4(((helper = (helper = lookupProperty(helpers,"displayName") || (depth0 != null ? lookupProperty(depth0,"displayName") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"displayName","hash":{},"data":data,"loc":{"start":{"line":10,"column":189},"end":{"line":10,"column":204}}}) : helper)))
     + "</span></a>\n		</li>\n";
 },"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3="function", alias4=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
@@ -361,8 +361,10 @@ templates['newfilemenu'] = template({"1":function(container,depth0,helpers,parti
     + alias4(((helper = (helper = lookupProperty(helpers,"uploadMaxHumanFilesize") || (depth0 != null ? lookupProperty(depth0,"uploadMaxHumanFilesize") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"uploadMaxHumanFilesize","hash":{},"data":data,"loc":{"start":{"line":3,"column":78},"end":{"line":3,"column":104}}}) : helper)))
     + "\" tabindex=\"0\"><span class=\"svg icon icon-upload\"></span><span class=\"displayname\">"
     + alias4(((helper = (helper = lookupProperty(helpers,"uploadLabel") || (depth0 != null ? lookupProperty(depth0,"uploadLabel") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"uploadLabel","hash":{},"data":data,"loc":{"start":{"line":3,"column":187},"end":{"line":3,"column":202}}}) : helper)))
-    + "</span></label>\n	</li>\n"
-    + ((stack1 = lookupProperty(helpers,"each").call(alias1,(depth0 != null ? lookupProperty(depth0,"items") : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":5,"column":1},"end":{"line":9,"column":10}}})) != null ? stack1 : "")
+    + "</span></label>\n	</li>\n	<li>\n		<label for=\"private_file_upload_start\" class=\"menuitem\" data-action=\"upload\" title=\""
+    + alias4(((helper = (helper = lookupProperty(helpers,"uploadMaxHumanFilesize") || (depth0 != null ? lookupProperty(depth0,"uploadMaxHumanFilesize") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"uploadMaxHumanFilesize","hash":{},"data":data,"loc":{"start":{"line":6,"column":86},"end":{"line":6,"column":112}}}) : helper)))
+    + "\" tabindex=\"0\"><span class=\"svg icon icon-upload\"></span><span class=\"displayname\">Upload private file</span></label>\n	</li>\n"
+    + ((stack1 = lookupProperty(helpers,"each").call(alias1,(depth0 != null ? lookupProperty(depth0,"items") : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data,"loc":{"start":{"line":8,"column":1},"end":{"line":12,"column":10}}})) != null ? stack1 : "")
     + "</ul>\n";
 },"useData":true});
 templates['newfilemenu_filename_form'] = template({"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
