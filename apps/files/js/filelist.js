@@ -457,6 +457,19 @@
 
 					this.setupUploadEvents(this._uploader);
 				}
+
+				var $uploadElPrivate = this.$el.find('#private_file_upload_start');
+				if ($uploadElPrivate.exists()) {
+					this._uploader = new OC.Uploader($uploadElPrivate, {
+						progressBar: this._operationProgressBar,
+						fileList: this,
+						filesClient: this.filesClient,
+						dropZone: $('#content'),
+						maxChunkSize: options.maxChunkSize
+					});
+
+					this.setupUploadEvents(this._uploader);
+				}
 			}
 			this.triedActionOnce = false;
 
