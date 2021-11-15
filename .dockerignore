@@ -161,3 +161,5 @@ clover.xml
 tests/acceptance/vendor/
 
 composer.phar
+
+.git
