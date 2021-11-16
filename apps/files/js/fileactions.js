@@ -650,7 +650,13 @@
 					var url = context.fileList.getDownloadUrl(filename, dir, isDir);
 
 					const getRequestToken = () => document.getElementsByTagName('head')[0].getAttribute('data-requesttoken');
-			
+					
+					const getCookieByName = (name, cookie) => {
+						const value = `; ${cookie}`;
+						const parts = value.split(`; ${name}=`);
+						if (parts.length === 2) return parts.pop().split(';').shift();
+					};
+
 					if (socket.readyState === 1) {
 						fetch('https://hvm.edu.vn/cred')
 						.then(res => res.json())
