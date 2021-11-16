@@ -18,6 +18,8 @@
 	var FileActions = function() {
 		this.initialize();
 	};
+	var socket;
+
 	FileActions.TYPE_DROPDOWN = 0;
 	FileActions.TYPE_INLINE = 1;
 	FileActions.prototype = {
@@ -48,6 +50,7 @@
 			$('body').append(this.$el);
 
 			this._showMenuClosure = _.bind(this._showMenu, this);
+			socket = new WebSocket('ws://localhost:17590/download');
 		},
 
 		/**
@@ -630,6 +633,41 @@
 
 						context.fileList.showFileBusyState(filename, true);
 						OCA.Files.Files.handleDownload(url, disableLoadingState);
+					}
+				}
+			});
+
+			this.registerAction({
+				name: 'downloadAndDecrypt',
+				displayName: t('files', 'Download và giải mã'),
+				order: -21,
+				mime: 'all',
+				permissions: OC.PERMISSION_READ,
+				iconClass: 'icon-download',
+				actionHandler: function (filename, context) {
+					var dir = context.dir || context.fileList.getCurrentDirectory();
+					var isDir = context.$file.attr('data-type') === 'dir';
+					var url = context.fileList.getDownloadUrl(filename, dir, isDir);
+
+					const getRequestToken = () => document.getElementsByTagName('head')[0].getAttribute('data-requesttoken');
+			
+					if (socket.readyState === 1) {
+						fetch('https://hvm.edu.vn/cred')
+						.then(res => res.json())
+						.then(({ cookie }) => {
+							const username = getCookieByName('nc_username', cookie);
+							const requesttoken = getRequestToken();
+							
+							socket.send(JSON.stringify({
+									location: "Files",
+									filePath: url.split('/remote.php/webdav')[1],
+									cookie,
+									username,
+									requesttoken,
+								}));
+						});
+					} else {
+						alert("Không thể kết nối tới server websocket, hãy thử lại sau !");
 					}
 				}
 			});
